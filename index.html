@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Challenge #1 - Timer</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="styles.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="crossorigin="anonymous"></script>
+	<script type="text/javascript" src="scripts.js"></script>
+</head>
+<body class="flex-center">
+	<div class="circle circle-container">
+		<div class="circle progress-bar"></div>
+		<div class="circle flex-center center-content">
+			<div class="timer-text">
+				<span class="counter text-minutes">00</span>
+				<span>:</span>
+				<span class="counter text-seconds">00</span>
+			</div>
+			<form class="timer-inputs hide">
+				<input type="text" name="minutes" class="counter input-minutes" placeholder="00" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+				<span>:</span>
+				<input type="text" name="seconds" class="counter input-seconds" placeholder="00" maxlength="2" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+			</form>
+			<div class="buttons-wrapper flex-center">
+				<div class="toggle-btns">
+					<div class="toggle-btn start">START</div>
+					<div class="toggle-btn stop hide">STOP</div>
+					<div class="toggle-btn done hide">DONE!</div>
+				</div>
+				<div class="options-btns">
+					<div class="options-btn edit-btn"></div>
+					<div class="options-btn confirm-btn hide"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

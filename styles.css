@@ -1,0 +1,168 @@
+/*** The new CSS Reset - version 1.4.2 (last updated 30.11.2021) ***/
+/*
+    Remove all the styles of the "User-Agent-Stylesheet", except for the 'display' property
+    - The "symbol *" part is to solve Firefox SVG sprite bug
+ */
+*:where(:not(iframe, canvas, img, svg, video):not(svg *, symbol *)) {
+    all: unset;
+    display: revert;
+}
+/* Preferred box-sizing value */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+/* Remove list styles (bullets/numbers) */
+ol, ul, menu {
+    list-style: none;
+}
+/* For images to not be able to exceed their container */
+img {
+    max-width: 100%;
+}
+/* removes spacing between cells in tables */
+table {
+    border-collapse: collapse;
+}
+/* revert the 'white-space' property for textarea elements on Safari */
+textarea {
+    white-space: revert;
+}
+/* revert for bug in Chromium browsers
+   - fix for the content editable attribute will work properly. */
+:where([contenteditable]){
+    -moz-user-modify: read-write;
+    -webkit-user-modify: read-write;
+    overflow-wrap: break-word;
+    -webkit-line-break: after-white-space;
+}
+/******************************************************************************/
+
+@font-face {
+	font-family: Bebas Neue;
+	src: url(fonts/bebasneue-book-webfont.woff);
+	font-weight: 400;
+}
+
+:root {
+	--background: #2B2A30;
+	--red: #9d0000;
+	--green: #00aa51;
+	--white: #fff;
+	--progress: 100%;
+}
+
+html, body {
+	height: 100%;
+	width: 100%;
+}
+
+body {
+	font-family: Bebas Neue;
+	background-color: var(--background);
+	color: var(--white);
+}
+
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.circle {
+	border-radius: 50%;
+}
+
+.hide {
+	display: none !important;
+}
+
+.circle-container {
+	width: 90vw;
+	height: 90vw;
+	max-width: 518px;
+	max-height: 518px;
+	position: relative;
+	background: #000;
+	box-shadow: -5px 14px 44px #000000, 5px -16px 50px rgba(255, 255, 255, 0.15);
+}
+
+.progress-bar {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	max-width: 518px;
+	max-height: 518px;
+	background-image: conic-gradient(#000 var(--progress), #910A0A var(--progress));
+}
+
+.progress-bar.green {
+	background: #09A65A;
+}
+
+.center-content {
+	position: absolute;
+	top: 9px;
+	left: 9px;
+	flex-direction: column;
+	width: calc(100% - 18px);
+	height: calc(100% - 18px);
+	max-width: 500px;
+	max-height: 500px;
+	padding-top: 4em;
+	background: radial-gradient(71.4% 71.4% at 51.7% 28.6%, #3A393F 0%, #17171A 100%);
+	box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45);
+}
+
+.timer-text, .timer-inputs {
+	display: flex;
+	font-size: 196px;
+	font-size: clamp(16px, 35vw, 196px);
+}
+
+.counter {
+	width: 165px;
+}
+
+.text-minutes, .input-minutes {
+	text-align: right;
+}
+
+.text-seconds, .input-seconds {
+	text-align: left;
+}
+
+.buttons-wrapper {
+	height: 60px;
+	flex-direction: column;
+}
+
+.toggle-btn {
+	cursor: pointer;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: bold;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	letter-spacing: 0.6em;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.options-btn {
+	width: 24px;
+	height: 24px;
+	margin-top: 15px;
+	background-size: 24px 24px;
+	background-repeat: no-repeat;
+	opacity: 0.5;
+	cursor: pointer;
+}
+
+.edit-btn {
+	background-image: url('images/gear.svg');
+}
+
+.confirm-btn {
+	background-image: url('images/check.svg');
+}
