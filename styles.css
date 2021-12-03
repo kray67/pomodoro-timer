@@ -95,6 +95,7 @@ body {
 	max-width: 518px;
 	max-height: 518px;
 	background-image: conic-gradient(#000 var(--progress), #910A0A var(--progress));
+	transform: scaleX(-1);
 }
 
 .progress-bar.green {
